@@ -369,7 +369,7 @@ int PointCloud2IteratorBase<T, U>::set_field(const sensor_msgs::PointCloud2 &clo
   is_bigendian_ = cloud_msg.is_bigendian;
   point_step_ = cloud_msg.point_step;
   // make sure the channel is valid
-  std::vector<sensor_msgs::PointField>::const_iterator field_iter = cloud_msg.fields.begin(), field_end =
+  ::ros::messages::types::vector<sensor_msgs::PointField>::const_iterator field_iter = cloud_msg.fields.begin(), field_end =
       cloud_msg.fields.end();
   while ((field_iter != field_end) && (field_iter->name != field_name))
     ++field_iter;
